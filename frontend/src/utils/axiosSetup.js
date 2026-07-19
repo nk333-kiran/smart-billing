@@ -3,7 +3,8 @@ import { API_URL } from "../config/apiConfig";
 
 // Configure a default base URL for all axios requests.
 axios.defaults.baseURL = `${API_URL}/api`;
-axios.defaults.withCredentials = true; // send cookies if needed
+// Credentials are not required for JWT‑based auth; disable to avoid CORS credential errors.
+axios.defaults.withCredentials = false;
 
 let pending = 0;
 

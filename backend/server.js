@@ -23,7 +23,29 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// CORS configuration for production.
+// Only allow requests from the local development server and the Vercel frontend.
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://smart-billing-ivory.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow non‑browser requests (e.g., curl, Postman) which have no origin.
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      const msg = "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("dev"));
