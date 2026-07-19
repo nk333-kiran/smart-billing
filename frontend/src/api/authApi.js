@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-const API_BASE = "/api/auth";
+const API_BASE = `${API_URL}/api/auth`;
 
 export const registerUser = async (payload) => {
   const response = await axios.post(`${API_BASE}/register`, payload);

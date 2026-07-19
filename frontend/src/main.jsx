@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
+import "./utils/axiosSetup"; // sets baseURL, loading, error handling
 import "./index.css";
 import App from "./App";
 

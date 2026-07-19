@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-const BASE = "/api/bills";
+const BASE = `${API_URL}/api/bills`;
 
 export const createBill = async (payload) => {
   const { data } = await axios.post(BASE, payload);

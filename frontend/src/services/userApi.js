@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from "../config/apiConfig";
 
-const BASE = '/api/users';
+const BASE = `${API_URL}/api/users`;
 
 export const getUsers = async (params) => {
   const { data } = await axios.get(BASE, { params });

@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-const BASE = "/api/customers";
+const BASE = `${API_URL}/api/customers`;
 
 export const getCustomers = async (params = {}) => {
   const { data } = await axios.get(BASE, { params });

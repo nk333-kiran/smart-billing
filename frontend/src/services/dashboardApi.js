@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-const DASHBOARD_BASE = "/api/dashboard";
+const DASHBOARD_BASE = `${API_URL}/api/dashboard`;
 
 export const getDashboardSummary = async () => {
   const { data } = await axios.get(DASHBOARD_BASE);
