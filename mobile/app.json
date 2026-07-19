@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "PocketPOS",
+    "slug": "pocketpos",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#1f2937"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pocketpos.app"
+    },
+    "android": {
+      "package": "com.pocketpos.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#1f2937"
+      }
+    },
+    "extra": {
+      "apiUrl": "http://192.168.1.2:5000"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-status-bar"
+    ]
+  }
+}
